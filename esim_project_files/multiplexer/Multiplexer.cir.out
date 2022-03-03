@@ -1,0 +1,32 @@
+* c:\users\vivobook\appdata\roaming\spb_data\esim-workspace\multiplexer\multiplexer.cir
+
+* u3  net-_u3-pad1_ net-_u3-pad2_ net-_u3-pad3_ net-_u3-pad4_ sensoham_2to1mux
+* u5  i0 i1 sel net-_u3-pad1_ net-_u3-pad2_ net-_u3-pad3_ adc_bridge_3
+* u6  net-_u3-pad4_ y dac_bridge_1
+v1  i0 gnd pulse(0 5 0.1m 0.1m 0.1m 2 4)
+v2  i1 gnd pulse(0 5 0.1m 0.1m 0.1m 4 8)
+v3  sel gnd pulse(0 5 0.1m 0.1m 0.1m 8 16)
+r1  y gnd 1k
+* u1  i0 plot_v1
+* u2  i1 plot_v1
+* u4  sel plot_v1
+* u7  y plot_v1
+a1 [net-_u3-pad1_ ] [net-_u3-pad2_ ] [net-_u3-pad3_ ] [net-_u3-pad4_ ] u3
+a2 [i0 i1 sel ] [net-_u3-pad1_ net-_u3-pad2_ net-_u3-pad3_ ] u5
+a3 [net-_u3-pad4_ ] [y ] u6
+* Schematic Name:                             sensoham_2to1mux, NgSpice Name: sensoham_2to1mux
+.model u3 sensoham_2to1mux(rise_delay=1.0e-9 fall_delay=1.0e-9 input_load=1.0e-12 instance_id=1 ) 
+* Schematic Name:                             adc_bridge_3, NgSpice Name: adc_bridge
+.model u5 adc_bridge(in_low=1.0 in_high=2.0 rise_delay=1.0e-9 fall_delay=1.0e-9 ) 
+* Schematic Name:                             dac_bridge_1, NgSpice Name: dac_bridge
+.model u6 dac_bridge(out_low=0.0 out_high=5.0 out_undef=0.5 input_load=1.0e-12 t_rise=1.0e-9 t_fall=1.0e-9 ) 
+.tran 2e-00 16e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(sel)+30 v(i0)+20 v(i1)+10 v(y)
+.endc
+.end
