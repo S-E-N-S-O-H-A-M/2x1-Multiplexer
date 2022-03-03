@@ -100,7 +100,7 @@ endmodule
 
 ```
 ## Makerchip Plots
-![makerchip ghraph](https://user-images.githubusercontent.com/65547096/156550063-d2f5ae4a-4003-4fd4-993e-b723d849c644.PNG)
+![makerchip ghraph_2](https://user-images.githubusercontent.com/65547096/156555274-818b9fdd-9ea2-4903-b648-e82169e1b655.PNG)
 
 ## Netlists
 ![netlistcirout](https://user-images.githubusercontent.com/65547096/156550274-6acc7a11-773b-4a18-b7d8-0b707098dc34.PNG)
