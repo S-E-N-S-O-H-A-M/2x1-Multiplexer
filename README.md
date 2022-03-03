@@ -16,7 +16,6 @@
 - [Makerchip Plots](#makerchip-plots)
 - [Netlists](#netlists)
 - [NgSpice Plots](#ngspice-plots)
-- [GAW Plots](#gaw-plots)
 - [Steps to run generate NgVeri Model](#steps-to-run-generate-ngveri-model)
 - [Steps to run this project](#steps-to-run-this-project)
 - [Author](#author)
@@ -108,8 +107,6 @@ endmodule
 
 ## NgSpice Plots
 ![ngspice](https://user-images.githubusercontent.com/65547096/156550536-bbc115f1-b275-4a3a-8acb-0bffd7342619.PNG)
-
-## GAW Plots
 
 ## Steps to run generate NgVeri Model
 1. Open eSim
