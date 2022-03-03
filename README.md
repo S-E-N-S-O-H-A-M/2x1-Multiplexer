@@ -19,7 +19,7 @@
 - [GAW Plots](#gaw-plots)
 - [Steps to run generate NgVeri Model](#steps-to-run-generate-ngveri-model)
 - [Steps to run this project](#steps-to-run-this-project)
-- [Author](#Author)
+- [Author](#author)
 - [Acknowlegdements](#acknowlegdements)
 - [References](#references)
 
@@ -27,45 +27,20 @@
 
 
 ## Abstract
-With the increasing technology, the size of the transistors is
-reducing. The reducing size leads to the tradeoff between
-power, efficiency and switching time. Because of which
-there is requirement to design low power transistor with less
-area and lesser number of gates. The design should use
-lesser power as well. Thus, making it more and more
-efficient.
+The paper constitutes the design and analysis of a 2:1 Multiplexer. Multiplexer is a combinational circuit that has maximum of 2n data inputs, ‘n’ selection lines and single output line. One of these data inputs will be connected to the output based on the values of selection lines. Since there are ‘n’ selection lines, there will be 2n possible combinations of zeros and ones. So, each combination will select only one data input. Multiplexer is also called as Mux. The 2:1 Multiplexer has been designed using CMOS.
 ## Reference Circuit Diagram
-![image](https://user-images.githubusercontent.com/58599984/152688334-fa3ad04d-e142-4dd1-a0cf-00fd13ca2d9e.png)
+![image](https://user-images.githubusercontent.com/65547096/156544513-a56eb771-0f57-4460-8687-24f0c9832626.png)
 ## Reference Waveform
-![image](https://user-images.githubusercontent.com/58599984/152688402-29877a15-deb3-4dee-9bcc-2313851182de.png)
+![image](https://user-images.githubusercontent.com/65547096/156544570-7c6d072d-c50e-46d3-9477-8fa27022ec93.png)
 ## Circuit Details
-As shown in the figure we have two cross coupled
-circuits of PMOS logic and NMOS logic.
-</br>
-On the PMOS logic we are getting the output as XOR
-while in the NMOS block we get the output as XNOR.
-</br>
-The transistors M4 and M3 behave as a pass transistor
-and pass the output of M1, M2 and M5, M6
-respectively.
-</br>
-
-The advantage of the above circuit is that it uses only
-6 transistors and gives both outputs of XOR and
-XNOR while the general circuit uses 8 transistors with
-only one output either XOR or XNOR.
-</br>
-This way it consumes less space and less power and is
-efficient in many ways.
-</br>
+The given 2:1 MUX has two inputs(i0,i1), one selection input (sel), and one output line(y). Therefore, it can have only two achievable combinations, i.e., 0,1. When selection input is ‘0’ then input line ‘i1’ is preferred and is directed to the output, y. Similarly, when selection input is ‘1’ then input line ‘i1’ is preferred and is directed to the output, y. CMOS based 2:1 MUX is a build-up of two sections namely, pull up lattice and pull-down lattice. Pull up lattice is known as PMOS, and pull-down lattice is known as NMOS. In this model, the PMOS device is connected to the supply voltage (VDD) and NMOS is connected to the ground (GND). Both PMOS and NMOS substrate is given to the source terminal (given to VDD in case of PMOS and GND in case of NMOS). From the circuit, if both i1 and i2 inputs are high, then both the NMOS transistors will conduct, neither of the PMOS transistors will conduct, and a conductive path will be established between the output and VDD, bringing the output low. If both i1and i2 inputs are low, then neither of the NMOS transistors will conduct, while both PMOS transistors will conduct, establishing a conductive path between the output and VDD, bringing the output high. If either of the i1 or i2 inputs is low, one of the NMOS transistors will not conduct, one of the PMOS transistors will, and a conductive path will be established between the output and VDD, bringing the output high.
 ## Truth Table
 
-| Input A  | Input B | Output XOR  | Output XNOR |
-| ------------- | ------------- | ------------- | ------------- |
-| 0  | 0 | 0  | 1 |
-| 0  | 1 | 1| 0|
-| 1  | 0 |1|0|
-| 1 | 1 |0|1|
+| Sel  | y |
+| ------------- | ------------- | 
+| 0  | i0 |
+| 1  | i1 | 
+
 ## Software Used
 ### eSim
 It is an Open Source EDA developed by FOSSEE, IIT Bombay. It is used for electronic circuit simulation. It is made by the combination of two software namely NgSpice and KiCAD.
@@ -86,58 +61,56 @@ https://www.veripool.org/verilator/
 
 ## Circuit Diagram in eSim
 The following is the schematic in eSim:
-![image](https://user-images.githubusercontent.com/58599984/156439856-079de481-b68d-4955-b9c9-6ff310c5de58.png)
+![schematic](https://user-images.githubusercontent.com/65547096/156545586-af09b852-7e16-4db4-a572-a8bf164a2350.PNG)
 ## Verilog Code
-![image](https://user-images.githubusercontent.com/58599984/156445908-1af8255c-d17c-4275-8e24-ee65c96af66a.png)
+![verilog_code](https://user-images.githubusercontent.com/65547096/156546310-1f243d14-6a85-4926-a8d2-27699fa9d426.PNG)
 ## Makerchip
 ```
 \TLV_version 1d: tl-x.org
 \SV
-/* verilator lint_off UNUSED*/  /* verilator lint_off DECLFILENAME*/  /* verilator lint_off BLKSEQ*/  /* verilator lint_off WIDTH*/  /* verilator lint_off SELRANGE*/  /* verilator lint_off PINCONNECTEMPTY*/  /* verilator lint_off DEFPARAM*/  /* verilator lint_off IMPLICIT*/  /* verilator lint_off COMBDLY*/  /* verilator lint_off SYNCASYNCNET*/  /* verilator lint_off UNOPTFLAT */  /* verilator lint_off UNSIGNED*/  /* verilator lint_off CASEINCOMPLETE*/  /* verilator lint_off UNDRIVEN*/  /* verilator lint_off VARHIDDEN*/  /* verilator lint_off CASEX*/  /* verilator lint_off CASEOVERLAP*/  /* verilator lint_off PINMISSING*/    /* verilator lint_off BLKANDNBLK*/  /* verilator lint_off MULTIDRIVEN*/     /* verilator lint_off WIDTHCONCAT*/  /* verilator lint_off ASSIGNDLY*/  /* verilator lint_off MODDUP*/  /* verilator lint_off STMTDLY*/  /* verilator lint_off LITENDIAN*/  /* verilator lint_off INITIALDLY*/    
+/* verilator lint_off UNUSED*/  /* verilator lint_off DECLFILENAME*/  /* verilator lint_off BLKSEQ*/  /* verilator lint_off WIDTH*/  /* verilator lint_off SELRANGE*/  /* verilator lint_off PINCONNECTEMPTY*/  /* verilator lint_off DEFPARAM*/  /* verilator lint_off IMPLICIT*/  /* verilator lint_off COMBDLY*/  /* verilator lint_off SYNCASYNCNET*/  /* verilator lint_off UNOPTFLAT */  /* verilator lint_off UNSIGNED*/  /* verilator lint_off CASEINCOMPLETE*/  /* verilator lint_off UNDRIVEN*/  /* verilator lint_off VARHIDDEN*/  /* verilator lint_off CASEX*/  /* verilator lint_off CASEOVERLAP*/  /* verilator lint_off PINMISSING*/  /* verilator lint_off BLKANDNBLK*/  /* verilator lint_off MULTIDRIVEN*/  /* verilator lint_off WIDTHCONCAT*/  /* verilator lint_off ASSIGNDLY*/  /* verilator lint_off MODDUP*/  /* verilator lint_off STMTDLY*/  /* verilator lint_off LITENDIAN*/  /* verilator lint_off INITIALDLY*/  
 
 //Your Verilog/System Verilog Code Starts Here:
-module ixorxnor(output yXOR,output yXNOR, input a,input b);
-  
-
-
-  assign yXOR = a ^ b;
-  assign yXNOR = ~(a ^ b);
-  
-endmodule 
+module sensoham_2to1mux (input i0 , input i1 , input sel , output reg y);
+always @ (*)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
+endmodule
 
 //Top Module Code Starts here:
 	module top(input logic clk, input logic reset, input logic [31:0] cyc_cnt, output logic passed, output logic failed);
-		logic  yXOR;//output
-		logic  yXNOR;//output
-		logic  a;//input
-		logic  b;//input
+		logic  i0;//input
+		logic  i1;//input
+		logic  sel;//input
+		logic  y;//output
 //The $random() can be replaced if user wants to assign values
-      always @(posedge clk) 
-         begin
-         a = $random();
-		   b = $random();
-            end
-		ixorxnor ixorxnor(.yXOR(yXOR), .yXNOR(yXNOR), .a(a), .b(b));
+		assign i0 = $random();
+		assign i1 = $random();
+		assign sel = $random();
+		sensoham_2to1mux sensoham_2to1mux(.i0(i0), .i1(i1), .sel(sel), .y(y));
 	
 \TLV
 //Add \TLV here if desired                                     
 \SV
 endmodule
 
+
 ```
 ## Makerchip Plots
-![image](https://user-images.githubusercontent.com/58599984/156443516-6fdc4420-0bab-40a8-84f4-515966e4f569.png)
+![makerchip ghraph](https://user-images.githubusercontent.com/65547096/156550063-d2f5ae4a-4003-4fd4-993e-b723d849c644.PNG)
 
 ## Netlists
-![image](https://user-images.githubusercontent.com/58599984/156440985-0a983124-b5ad-4b60-b83f-7adf0e7c36fb.png)
-## NgSpice Plots
-![image](https://user-images.githubusercontent.com/58599984/156440036-188911e0-9bb2-4d9f-b53d-878f5792d1c6.png)
-![image](https://user-images.githubusercontent.com/58599984/156440082-c3f319ef-3224-4595-85e9-38bae135350f.png)
+![netlistcirout](https://user-images.githubusercontent.com/65547096/156550274-6acc7a11-773b-4a18-b7d8-0b707098dc34.PNG)
 
-![image](https://user-images.githubusercontent.com/58599984/156439624-353c14ac-4216-4aa7-8207-64f4c287b2b7.png)
-![image](https://user-images.githubusercontent.com/58599984/156439590-9371c62f-384b-42f8-9403-9704429d752d.png)
+## NgSpice Plots
+![ngspice](https://user-images.githubusercontent.com/65547096/156550536-bbc115f1-b275-4a3a-8acb-0bffd7342619.PNG)
+
 ## GAW Plots
-![image](https://user-images.githubusercontent.com/58599984/156439535-edb78fc7-a6e6-4178-864a-7cea5ea37e23.png)
+
 ## Steps to run generate NgVeri Model
 1. Open eSim
 2. Run NgVeri-Makerchip 
@@ -150,11 +123,11 @@ endmodule
 ## Steps to run this project
 1. Open a new terminal
 2. Clone this project using the following command:</br>
-```git clone https://github.com/Eyantra698Sumanto/XOR-XNOR-Gate.git ```</br>
+```git clone https://github.com/Eyantra698Sumanto/2x1-Multiplexer.git ```</br>
 3. Change directory:</br>
-```cd eSim_project_files/xor_xnor```</br>
+```cd eSim_project_files/multiplexer```</br>
 4. Run ngspice:</br>
-```ngspice xor_xnor.cir.out```</br>
+```ngspice multiplexer.cir.out```</br>
 5. To run the project in eSim:
 
   - Run eSim</br>
