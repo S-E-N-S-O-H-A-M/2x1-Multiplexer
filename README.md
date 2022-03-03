@@ -120,11 +120,11 @@ endmodule
 ## Steps to run this project
 1. Open a new terminal
 2. Clone this project using the following command:</br>
-```git clone https://github.com/Eyantra698Sumanto/2x1-Multiplexer.git ```</br>
+```git clone https://github.com/S-O-H-A-M/2x1-Multiplexer.git ```</br>
 3. Change directory:</br>
 ```cd eSim_project_files/multiplexer```</br>
 4. Run ngspice:</br>
-```ngspice multiplexer.cir.out```</br>
+```ngspice Multiplexer.cir.out```</br>
 5. To run the project in eSim:
 
   - Run eSim</br>
