@@ -133,10 +133,11 @@ endmodule
 ## Author
 • Soham Sen , B.Tech (Electronics and Communication Engineering), Amity University Kolkata - sohamsen25420001@gmail.com
 ## Acknowlegdements
-1. FOSSEE, IIT Bombay
-2. Steve Hoover, Founder, Redwood EDA
-3. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
-4. Sumanto Kar, eSim Team, FOSSEE
+1. <a href='https://www.esim.fossee.in/'>FOSSEE Team, IIT Bombay</a></br>
+2. <a href='https://www.makerchip.com/'>MakerChip, RedWood EDA</a></br>
+3. <a href='https://www.vlsisystemdesign.com/'>VLSI System Design (VSD) Corp. Pvt. Ltd India</a></br>
+4. Kunal Ghosh, Co-founder, VSD Corp. Pvt. Ltd. - kunalpghosh@gmail.com
+5. Sumanto Kar, eSim Team, FOSSEE
 
 ## References
 1.  Shyam Sankalp Pattnaik. Design of 2 to 1 Multiplexer in eSIM. https://cutt.ly/UAwYMew.
