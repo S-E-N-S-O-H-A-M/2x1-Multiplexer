@@ -35,10 +35,16 @@ The paper constitutes the design and analysis of a 2:1 Multiplexer. Multiplexer 
 The given 2:1 MUX has two inputs(i0,i1), one selection input (sel), and one output line(y). Therefore, it can have only two achievable combinations, i.e., 0,1. When selection input is ‘0’ then input line ‘i1’ is preferred and is directed to the output, y. Similarly, when selection input is ‘1’ then input line ‘i1’ is preferred and is directed to the output, y. CMOS based 2:1 MUX is a build-up of two sections namely, pull up lattice and pull-down lattice. Pull up lattice is known as PMOS, and pull-down lattice is known as NMOS. In this model, the PMOS device is connected to the supply voltage (VDD) and NMOS is connected to the ground (GND). Both PMOS and NMOS substrate is given to the source terminal (given to VDD in case of PMOS and GND in case of NMOS). From the circuit, if both i1 and i2 inputs are high, then both the NMOS transistors will conduct, neither of the PMOS transistors will conduct, and a conductive path will be established between the output and VDD, bringing the output low. If both i1and i2 inputs are low, then neither of the NMOS transistors will conduct, while both PMOS transistors will conduct, establishing a conductive path between the output and VDD, bringing the output high. If either of the i1 or i2 inputs is low, one of the NMOS transistors will not conduct, one of the PMOS transistors will, and a conductive path will be established between the output and VDD, bringing the output high.
 ## Truth Table
 
-| Sel  | y |
-| ------------- | ------------- | 
-| 0  | i0 |
-| 1  | i1 | 
+| Sel  | i0 | i1 |y |
+| ------------- | ------------- | ------------- | ------------- | 
+| 0  | 0| 0| 0|
+| 0  | 0| 1| 0|
+| 0  | 1| 0| 1|
+| 0  | 1| 1| 1|
+| 1  | 0| 0| 0|
+| 1  | 0| 1| 1|
+| 1  | 1| 0| 0|
+| 1  | 1| 1| 1|
 
 ## Software Used
 ### eSim
